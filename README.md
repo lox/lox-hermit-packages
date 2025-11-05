@@ -9,7 +9,7 @@ To use packages from this repository, configure your project's `bin/hermit.hcl`:
 ```hcl
 sources = [
   "https://github.com/cashapp/hermit-packages.git",
-  "~/Develop/lox/lox-hermit-packages"
+  "https://github.com/lox/lox-hermit-packages.git"
 ]
 ```
 

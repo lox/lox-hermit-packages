@@ -1,0 +1,42 @@
+---
+
+name: Autoversion
+
+on:
+  schedule:
+    - cron: '30 2 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  autoversion:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Initialize Hermit
+        run: ./bin/hermit env -r
+
+      - name: Auto-version packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.HERMIT_AUTOVERSION_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          eval "$(./bin/hermit env -r)"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          hermit manifest auto-version --continue-on-error --update-digests $(ls -1 *.hcl | shuf)
+
+          # Check GitHub API rate limit
+          curl -s -H "Authorization: token ${GITHUB_TOKEN}" https://api.github.com/rate_limit | jq .
+
+          if ! git diff --quiet; then
+            git commit -am "Auto-version update"
+            git push
+          else
+            echo "No changes to commit"
+          fi

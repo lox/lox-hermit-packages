@@ -2,7 +2,7 @@ description = "Poker for Bots - poker engine and bot framework"
 binaries = ["pokerforbots"]
 source = "https://github.com/lox/pokerforbots/releases/download/v${version}/pokerforbots-${version}-${os}-${arch}.tar.gz"
 
-version "2.1.0" "2.0.0" "2.7.0" {
+version "2.1.0" "2.0.0" "2.7.0" "2.11.0" {
   auto-version {
     github-release = "lox/pokerforbots"
   }
@@ -21,4 +21,8 @@ sha256sums = {
   "https://github.com/lox/pokerforbots/releases/download/v2.7.0/pokerforbots-2.7.0-darwin-amd64.tar.gz": "9ca106ee00c9cc46dff44a04ab131d849bfe2ee2dce168816526fdb88d850e3d",
   "https://github.com/lox/pokerforbots/releases/download/v2.7.0/pokerforbots-2.7.0-darwin-arm64.tar.gz": "7916b72abf222f6208df1c90fd0d5d4b7547f6933f22e3392e9ac57f39385f6a",
   "https://github.com/lox/pokerforbots/releases/download/v2.7.0/pokerforbots-2.7.0-linux-amd64.tar.gz": "89c7411cc39d8728e40e974a7b9b35fb6ffe25364881f6ed89b93677cbdb78f5",
+  "https://github.com/lox/pokerforbots/releases/download/v2.11.0/pokerforbots-2.11.0-darwin-amd64.tar.gz": "15146b617e55628979376016aceef70d6784cfa6cb465727b29ce4b592ad6515",
+  "https://github.com/lox/pokerforbots/releases/download/v2.11.0/pokerforbots-2.11.0-linux-amd64.tar.gz": "532fa917b62e7768c6fd219e883aa448381f06a5b4aeea3f2684cec7b1993896",
+  "https://github.com/lox/pokerforbots/releases/download/v2.11.0/pokerforbots-2.11.0-darwin-arm64.tar.gz": "b3b2592d8dd99c52fb3579748647feb978a847ba9bd8e2492ebcbfef05ec13d5",
+  "https://github.com/lox/pokerforbots/releases/download/v2.11.0/pokerforbots-2.11.0-linux-arm64.tar.gz": "6a2e23d1467e9d9a20dea8fd9de2817da7ebff5a6560a56f7d84eb4088ebb999",
 }
